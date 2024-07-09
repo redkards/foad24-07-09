@@ -1,0 +1,11 @@
+<h1>Affichage des taches</h1>
+
+@for (item of taches; track $index) {
+
+<app-task-item [newTask]="item"></app-task-item>
+
+}
+
+<h2>affichage du formulaire d'ajout de taches</h2>
+
+<app-task-form (ajoutTache)="addTask($event)"></app-task-form>

@@ -1,0 +1,19 @@
+<h2>carte de tache</h2>
+
+@if (visible) {
+
+<div class="card" style="width: 18rem">
+  <img src="https://picsum.photos/200/200" class="card-img-top" alt="photo" />
+  <div class="card-body">
+    <h5 class="card-title">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, iure!
+    </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">titre : {{ newTask.title }}</li>
+    <li class="list-group-item">description : {{ newTask.description }}</li>
+  </ul>
+</div>
+
+<button type="submit" (click)="toggleVisibility()">supprimer</button>
+}

@@ -1,0 +1,27 @@
+<h2>formulaire d'ajout</h2>
+
+<form [formGroup]="newTaskForm" (ngSubmit)="onSubmit()">
+  <label> titre : </label>
+
+  <input type="text" formControlName="title" />
+
+  @if (submitted && form['title'].invalid) {
+  <span>* prix invalide</span>
+  }@else if (form['title'].hasError('minlength')) {
+  <span><strong> le titre doit contenir au moins 2 caractères </strong></span>
+  }
+
+  <label> description : </label>
+
+  <input type="text" formControlName="description" />
+  @if (submitted && form['description'].invalid) {
+  <span>* description invalide</span>
+  }@else if (form['description'].hasError('minlength')) {
+  <span
+    ><strong>
+      la description doit contenir au moins 10 caractères
+    </strong></span
+  >
+  }
+  <button type="submit">Ajouter</button>
+</form>
