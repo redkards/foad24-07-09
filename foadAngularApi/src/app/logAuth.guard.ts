@@ -9,10 +9,11 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { TokenService } from './services/token.service';
 
 @Injectable({ providedIn: 'root' })
 export class logAuth implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private tokenservice: TokenService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -22,6 +23,13 @@ export class logAuth implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+    let test = this.tokenservice.isLogged();
+    console.log(test);
+
+    if (test) {
+      return true;
+    }
+
     return this.router.navigate(['login']);
   }
 }
