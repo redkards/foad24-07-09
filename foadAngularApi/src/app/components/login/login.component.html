@@ -1,13 +1,23 @@
 <p>login works!</p>
 
-<form [formGroup]>
+<form [formGroup]="loginForm" name="loginForm" (ngSubmit)="addAuthor()">
   <h2>se connecter</h2>
 
   <label for="username">nom</label>
-  <input type="text" name="username" placeholder="username" />
+  <input
+    type="text"
+    name="username"
+    placeholder="username"
+    formControlName="username"
+  />
   <br />
   <label for="password">mot de passe</label>
-  <input type="password" name="password" placeholder="password" />
+  <input
+    type="password"
+    name="password"
+    placeholder="password"
+    formControlName="password"
+  />
   <br />
   <button type="submit">se connecter</button>
 </form>
