@@ -9,18 +9,18 @@ export class TokenService {
   constructor(private router: Router) {}
 
   saveToken(token: string): void {
-    localStorage.setItem('token', token);
-    this.router.navigate(['auteurCreate']);
+    localStorage.setItem('storageToken', token);
+    this.router.navigate(['accueil']);
   }
 
-  isLogged(): boolean {
-    const token = localStorage.getItem('token');
+  isLogged(): any {
+    const token = localStorage.getItem('storageToken');
 
-    return !!token;
+    return token;
   }
 
   logout(): void {
-    localStorage.removeItem('token');
+    localStorage.removeItem('storageToken');
     this.router.navigate(['accueil']);
   }
 }

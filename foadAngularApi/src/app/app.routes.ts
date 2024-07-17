@@ -20,7 +20,7 @@ export const routes: Routes = [
     canActivate: [logAuth],
   },
 
-  { path: 'auteurUpdate', component: AuthorUpdateComponent },
+  { path: 'auteurUpdate/:id', component: AuthorUpdateComponent },
 
   { path: 'login', component: LoginComponent },
 

@@ -33,7 +33,7 @@ export class AuthorCreateComponent {
     //send the form data to the server here
     this.authorService.createAuthor(this.createAuthorForm.value).subscribe();
 
-    console.log(this.createAuthorForm);
+    console.log(this.createAuthorForm.value);
 
     // this.router.navigate(['/auteurList']); // redirect to authors list after form submission
     this.createAuthorForm.reset();

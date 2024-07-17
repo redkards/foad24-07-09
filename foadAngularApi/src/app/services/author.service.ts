@@ -29,7 +29,7 @@ export class AuthorService {
     }
   }
 
-  updateAuthor(id: number, author: Author): Observable<Author> {
+  updateAuthor(author: Author, id: number): Observable<Author> {
     {
       return this.httpClient.put<Author>(
         `${this.apiUrl}/api/authors/${id}`,
