@@ -7,3 +7,21 @@ h2 {
 
   margin: 5px;
 }
+
+.btn1 {
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+}
+
+.btn1 button {
+  background-color: coral;
+}
+
+.btnSupp {
+  background-color: aquamarine;
+}
+
+.btnAdd {
+  background-color: gold;
+}

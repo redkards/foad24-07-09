@@ -22,4 +22,12 @@ export class AuthorListComponent {
       console.log(this.auteursList);
     });
   }
+  onDelete(id: any): void {
+    console.log(this.auteursList);
+
+    // Appeler le service pour supprimer l'auteur
+    this.authorService.deleteAuthor(id).subscribe();
+    console.log('Auteur supprimé avec succès');
+    // Récupérer la liste des auteurs après suppression
+  }
 }

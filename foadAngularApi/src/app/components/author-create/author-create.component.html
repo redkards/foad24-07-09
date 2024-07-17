@@ -1,1 +1,13 @@
 <p>author-create works!</p>
+
+<form [formGroup]="createAuthorForm" (ngSubmit)="onSubmit()">
+
+  <label for="nom">nom</label>
+  <input type="text" formControlName="LastName" id="nom">
+
+  <label for="prenom">prenom</label>
+  <input type="text" formControlName="FirstName" id="prenom">
+
+  <button type="submit" (click)="onSubmit()">Créer</button>
+
+</form>

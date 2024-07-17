@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +15,12 @@ export class TokenService {
 
   isLogged(): boolean {
     const token = localStorage.getItem('token');
-    console.log(token);
 
     return !!token;
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.router.navigate(['accueil']);
   }
 }

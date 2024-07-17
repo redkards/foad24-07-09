@@ -1,13 +1,12 @@
 <h2>liste des auteurs</h2>
+<div class="btn1">
+  <button type="submit">Ajouter un auteur</button>
+</div>
 
 @for (item of auteursList ; track $index) {
 <div class="container">
   <div class="card" style="width: 18rem">
-    <img
-      src="https://picsum.photos/200/300?random={{ $index }}"
-      class="card-img-top"
-      alt="..."
-    />
+    <img src="https://picsum.photos/200/300?random={{ $index }}" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">
@@ -20,6 +19,8 @@
       <li class="list-group-item">{{ item.FirstName }}</li>
       <li class="list-group-item">{{ item.LastName }}</li>
     </ul>
+    <button class="btnSupp" type="submit" (click)="onDelete(item.id)">supprimer</button>
+    <button class="btnADD" type="submit" routerLink="/auteurUpdate">modifier</button>
   </div>
 </div>
 

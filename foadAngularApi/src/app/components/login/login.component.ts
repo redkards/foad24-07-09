@@ -8,17 +8,21 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { IToken } from '../../_interfaces/token';
+import { jwtDecode } from 'jwt-decode';
 
 interface ICredentials {
   username: string;
   password: string;
 }
 
+interface IToken {
+  access_token: string;
+}
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, AuthService],
+  imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -31,17 +35,17 @@ export class LoginComponent {
   constructor(
     private formB: FormBuilder,
     private authService: AuthService,
-    private TokenService: TokenService
+    private tokenService: TokenService
   ) {}
 
   get form() {
     return this.loginForm.controls;
   } // getter to access form controls
-  addAuthor(): void {
+  onLogin(): void {
     console.log(this.loginForm.value);
     this.authService.logIn(this.loginForm.value).subscribe((data) => {
-      console.log(data.access_token);
-      this.TokenService.saveToken(data.access_token); // Store token in local storage);
+      this.tokenService.saveToken(data.token); // Store token in local storage);
+      console.log(data.token);
     });
   }
 }

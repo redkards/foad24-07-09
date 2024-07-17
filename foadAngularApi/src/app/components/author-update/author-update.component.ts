@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './author-update.component.html',
-  styleUrl: './author-update.component.css'
+  styleUrl: './author-update.component.css',
 })
 export class AuthorUpdateComponent {
-
+  constructor() {}
 }
