@@ -40,7 +40,7 @@ export class BookCreateComponent implements OnInit {
 
     console.log(this.createBookForm.value);
 
-    // this.router.navigate(['/auteurList']); // redirect to authors list after form submission
+    this.router.navigate(['/livresList']); // redirect to authors list after form submission
     this.createBookForm.reset();
   }
 

@@ -38,6 +38,15 @@
   <span>le commentaire doit contenir au moins 3 caractères</span>
   }
 
+  <label for="idAuthor"> selection auteur</label>
+  <select name="idAuthor" id="idAuthor" formControlName="idAuthor">
+    @for (item of auteur; track $index) {
+    <option value="{{ item.id }}">{{ item.FirstName }} {{ item.LastName }}</option>
+    }
+  </select>
+
+
+
 
   <button type="submit">modifier</button>
 

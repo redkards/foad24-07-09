@@ -8,6 +8,8 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book.model';
+import { Author } from '../../models/author.model';
+import { AuthorService } from '../../services/author.service';
 
 @Component({
   selector: 'app-book-update',
@@ -25,14 +27,18 @@ export class BookUpdateComponent {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private bookService: BookService
+    private bookService: BookService,
+    private authorService: AuthorService
   ) {
     this.livre = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       coverText: ['', [Validators.required, Validators.minLength(3)]],
       comment: ['', [Validators.required, Validators.minLength(3)]],
+      idAuthor: ['', [Validators.required]],
     });
   }
+
+  auteur: Author[] = [];
 
   ngOnInit(): void {
     this.bookId = Number(this.route.snapshot.paramMap.get('id'));
@@ -43,6 +49,10 @@ export class BookUpdateComponent {
         this.livre.patchValue(data);
       });
     }
+
+    this.authorService.getAllAuthors().subscribe((res) => {
+      this.auteur = res;
+    });
   }
 
   updateOneBook(): void {

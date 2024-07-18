@@ -15,15 +15,15 @@
       </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ item.id }}</li>
-      <li class="list-group-item">{{ item.title }}</li>
-      <li class="list-group-item">{{ item.coverText }}</li>
-      <li class="list-group-item">{{ item.comment }}</li>
+      <li class="list-group-item">id livre :{{ item.id }}</li>
+      <li class="list-group-item">titre : {{ item.title }}</li>
+      <li class="list-group-item">couverture : {{ item.coverText }}</li>
+      <li class="list-group-item">commentaires{{ item.comment }}</li>
 
       @if (item.author) {
-      <li class="list-group-item">{{ item.author.id }}</li>
-      <li class="list-group-item">{{ item.author.FirstName }}</li>
-      <li class="list-group-item">{{ item.author.LastName }}</li>
+      <li class="list-group-item">id auteur{{ item.author.id }}</li>
+      <li class="list-group-item">prenom : {{ item.author.FirstName }}</li>
+      <li class="list-group-item">nom : {{ item.author.LastName }}</li>
 
       }
     </ul>

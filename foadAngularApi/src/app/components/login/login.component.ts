@@ -8,7 +8,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 
 interface ICredentials {

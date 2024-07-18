@@ -1,0 +1,26 @@
+h2 {
+  text-align: center;
+}
+
+.container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+form input {
+  margin-bottom: 10px;
+}
+form select {
+  margin-bottom: 10px;
+}
