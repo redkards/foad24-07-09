@@ -19,8 +19,32 @@ export class TokenService {
     return token;
   }
 
+  getToken(): any {
+    const token = localStorage.getItem('storageToken');
+
+    return token;
+  }
+
   logout(): void {
     localStorage.removeItem('storageToken');
     this.router.navigate(['accueil']);
+  }
+
+  tokenInfo(): any {
+    const token = localStorage.getItem('storageToken');
+    if (token) {
+      const tokenView = jwtDecode(token);
+      return tokenView;
+    }
+    return null;
+  }
+
+  decodeToken(): any {
+    const Token = this.getToken();
+    if (Token) {
+      const decodedToken = jwtDecode(Token);
+      return decodedToken;
+    }
+    return null;
   }
 }

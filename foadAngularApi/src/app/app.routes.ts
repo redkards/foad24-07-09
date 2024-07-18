@@ -6,6 +6,10 @@ import { AuthorUpdateComponent } from './components/author-update/author-update.
 import { NotFoundComponent } from './commons/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { logAuth } from './logAuth.guard';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { BookCreateComponent } from './components/book-create/book-create.component';
+import { BookUpdateComponent } from './components/book-update/book-update.component';
+import { authGuardGuard } from './guard/auth-guard.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -14,13 +18,23 @@ export const routes: Routes = [
 
   { path: 'auteurList', component: AuthorListComponent },
 
+  { path: 'livreList', component: BookListComponent },
+
   {
     path: 'auteurCreate',
     component: AuthorCreateComponent,
-    canActivate: [logAuth],
+    canActivate: [authGuardGuard],
+  },
+
+  {
+    path: 'livreCreate',
+    component: BookCreateComponent,
+    canActivate: [authGuardGuard],
   },
 
   { path: 'auteurUpdate/:id', component: AuthorUpdateComponent },
+
+  { path: 'livreUpdate/:id', component: BookUpdateComponent },
 
   { path: 'login', component: LoginComponent },
 

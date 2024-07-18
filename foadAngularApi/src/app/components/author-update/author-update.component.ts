@@ -53,6 +53,8 @@ export class AuthorUpdateComponent {
     this.authorService
       .updateAuthor(this.auteur.value, this.authorId)
       .subscribe();
+
+    this.router.navigate(['/auteurList']); // redirect to authors list after form submission
   }
 
   get form() {

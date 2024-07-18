@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { jwtDecode } from 'jwt-decode';
+import { Router } from '@angular/router';
 
 interface ICredentials {
   username: string;
@@ -35,7 +36,8 @@ export class LoginComponent {
   constructor(
     private formB: FormBuilder,
     private authService: AuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private router: Router // Inject Router to navigate to home page after successful login
   ) {}
 
   get form() {
@@ -46,6 +48,8 @@ export class LoginComponent {
     this.authService.logIn(this.loginForm.value).subscribe((data) => {
       this.tokenService.saveToken(data.token); // Store token in local storage);
       console.log(data.token);
+
+      this.tokenService.tokenInfo();
     });
   }
 }

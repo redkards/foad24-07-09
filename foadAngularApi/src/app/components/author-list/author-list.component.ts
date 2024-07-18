@@ -29,5 +29,7 @@ export class AuthorListComponent {
     this.authorService.deleteAuthor(id).subscribe();
     console.log('Auteur supprimé avec succès');
     // Récupérer la liste des auteurs après suppression
+
+    this.auteursList = this.auteursList.filter((auteur) => auteur.id !== id); // remove the author from the list after deletion.
   }
 }

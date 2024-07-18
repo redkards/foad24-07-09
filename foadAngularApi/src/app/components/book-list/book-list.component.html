@@ -1,0 +1,39 @@
+<h2>liste des livres</h2>
+<div class="btn1">
+  <button type="submit" routerLink="/livreCreate">Ajouter un livre</button>
+</div>
+
+@for (item of livresList ; track $index) {
+<div class="container">
+  <div class="card" style="width: 18rem">
+    <img src="https://picsum.photos/200/300?random={{ $index }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ item.id }}</li>
+      <li class="list-group-item">{{ item.title }}</li>
+      <li class="list-group-item">{{ item.coverText }}</li>
+      <li class="list-group-item">{{ item.comment }}</li>
+
+      @if (item.author) {
+      <li class="list-group-item">{{ item.author.id }}</li>
+      <li class="list-group-item">{{ item.author.FirstName }}</li>
+      <li class="list-group-item">{{ item.author.LastName }}</li>
+
+      }
+    </ul>
+
+    @if(isAdmin) {
+    <button class="btnSupp" type="submit" (click)="onDelete(item.id)">supprimer</button>
+    <button class="btnAdd" type="submit" routerLink="/livreUpdate/{{item.id}}">modifier</button>
+    }
+
+  </div>
+</div>
+
+}

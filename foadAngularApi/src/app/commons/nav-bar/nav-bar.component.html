@@ -11,8 +11,17 @@
           <a class="nav-link active" aria-current="page" routerLink="/auteurList">liste des auteurs</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/livreList">liste des livres</a>
+        </li>
+        @if(connected == true){
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/auteurCreate">creation d'un auteur</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/livreCreate">creation d'un livre</a>
+        </li>
+        }
 
 
         <li class="nav-item dropdown">
