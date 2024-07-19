@@ -2,26 +2,32 @@
 
 <form [formGroup]="createBookForm" (ngSubmit)="onSubmit()">
   <div class="container">
-
     <label for="title">titre</label>
-    <input type="text" formControlName="title" id="title">
+    <input type="text" formControlName="title" id="title" />
 
     <label for="coverText">couverture</label>
-    <input type="text" formControlName="coverText" id="coverText">
+    <input type="text" formControlName="coverText" id="coverText" />
 
     <label for="comment">commentaires</label>
-    <input type="text" formControlName="comment" id="comment">
+    <input type="text" formControlName="comment" id="comment" />
 
     <label for="idAuthor"> selection auteur</label>
     <select name="idAuthor" id="idAuthor" formControlName="idAuthor">
       @for (item of author; track $index) {
-      <option value="{{ item.id }}">{{ item.FirstName }} {{ item.LastName }}</option>
+      <option value="{{ item.id }}">
+        {{ item.FirstName }} {{ item.LastName }}
+      </option>
       }
     </select>
 
+    <h3>nouvel auteur</h3>
 
+    <label for="firstName">prenom</label>
+    <input type="text" formControlName="firstName" id="firstName" />
+
+    <label for="lastName">nom</label>
+    <input type="text" formControlName="lastName" id="lastName" />
 
     <button type="submit">Créer</button>
-
   </div>
 </form>
