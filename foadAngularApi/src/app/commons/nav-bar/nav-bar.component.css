@@ -1,0 +1,8 @@
+.connected {
+  list-style-type: none;
+  height: 5rem;
+  width: 5rem;
+  background-color: blue;
+  text-align: center;
+  color: yellow;
+}

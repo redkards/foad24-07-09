@@ -1,8 +1,6 @@
 <h2>modification d'un livre</h2>
 
-
 <form [formGroup]="livre" (ngSubmit)="updateOneBook()">
-
   <!-- <label for="id">id :</label>
 
   <input type="text" id="id" formControlName="id">
@@ -13,25 +11,24 @@
   <span>id doit contenir au moins 1 caractère</span>
   } -->
 
-  <label for="title">titre :</label>
-  <input type="text" id="title" formControlName="title">
+  <label for="title">titre : </label>
+  <input type="text" id="title" formControlName="title" />
   @if (submitted && form['title'].invalid) {
   <span>titre invalid</span>
   }@else if (form['title'].hasError('minlength')) {
   <span>le titre doit contenir au moins 3 caractères</span>
   }
 
-  <label for="coverText">couverture :</label>
-  <input type="text" id="coverText" formControlName="coverText">
+  <label for="coverText">couverture : </label>
+  <input type="text" id="coverText" formControlName="coverText" />
   @if (submitted && form['coverText'].invalid) {
   <span>couverture invalid</span>
   }@else if (form['coverText'].hasError('minlength')) {
   <span>le couverture doit contenir au moins 3 caractères</span>
   }
 
-
-  <label for="comment">commentaire :</label>
-  <input type="text" id="comment" formControlName="comment">
+  <label for="comment">commentaire : </label>
+  <input type="text" id="comment" formControlName="comment" />
   @if (submitted && form['comment'].invalid) {
   <span>commentaire invalid</span>
   }@else if (form['comment'].hasError('minlength')) {
@@ -41,13 +38,11 @@
   <label for="idAuthor"> selection auteur</label>
   <select name="idAuthor" id="idAuthor" formControlName="idAuthor">
     @for (item of auteur; track $index) {
-    <option value="{{ item.id }}">{{ item.FirstName }} {{ item.LastName }}</option>
+    <option value="{{ item.id }}">
+      {{ item.FirstName }} {{ item.LastName }}
+    </option>
     }
   </select>
 
-
-
-
   <button type="submit">modifier</button>
-
 </form>
