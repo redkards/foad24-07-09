@@ -46,6 +46,7 @@ export class LoginComponent {
     console.log(this.loginForm.value);
     this.authService.logIn(this.loginForm.value).subscribe((data) => {
       this.tokenService.saveToken(data.token); // Store token in local storage);
+
       console.log(data.token);
 
       this.tokenService.tokenInfo();

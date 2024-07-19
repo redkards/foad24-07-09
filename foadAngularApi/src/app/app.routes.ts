@@ -10,6 +10,8 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BookCreateComponent } from './components/book-create/book-create.component';
 import { BookUpdateComponent } from './components/book-update/book-update.component';
 import { authGuardGuard } from './guard/auth-guard.guard';
+import { DetailBookComponent } from './components/detail-book/detail-book.component';
+import { DetailAuthorComponent } from './components/detail-author/detail-author.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -35,6 +37,10 @@ export const routes: Routes = [
   { path: 'auteurUpdate/:id', component: AuthorUpdateComponent },
 
   { path: 'livreUpdate/:id', component: BookUpdateComponent },
+
+  { path: 'auteurDetail/:id', component: DetailAuthorComponent },
+
+  { path: 'livreDetail/:id', component: DetailBookComponent },
 
   { path: 'login', component: LoginComponent },
 
